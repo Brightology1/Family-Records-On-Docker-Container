@@ -9,4 +9,6 @@ public interface FamilyService {
    public Family saveFamilyRecord(Family family);
 
   public List<Family> getFamilyMemberslist();
+
+   public Family getFamilyById(Long familyId);
 }

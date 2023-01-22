@@ -22,4 +22,9 @@ public class FamilyServiceImp implements FamilyService{
     public List<Family> getFamilyMemberslist() {
         return familyRepository.findAll();
     }
+
+    @Override
+    public Family getFamilyById(Long familyId) {
+        return familyRepository.findById(familyId).get();
+    }
 }
