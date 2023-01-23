@@ -72,4 +72,9 @@ public class FamilyServiceImp implements FamilyService{
 
     }
 
+    @Override
+    public Family getFamilyRecordByName(String familyName) {
+        return familyRepository.findByFamilyNameIgnoreCase(familyName);
+    }
+
 }

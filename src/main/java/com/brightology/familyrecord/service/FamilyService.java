@@ -15,4 +15,6 @@ public interface FamilyService {
    public void deleteFamilyRecordById(Long familyId);
 
    public Family updateFamilyRecordById(Long familyId, Family family);
+
+   public Family getFamilyRecordByName(String familyName);
 }

@@ -2,6 +2,7 @@ package com.brightology.familyrecord.controller;
 
 import com.brightology.familyrecord.entity.Family;
 import com.brightology.familyrecord.service.FamilyService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,7 +15,7 @@ public class FamilyController {
     private FamilyService familyService;
 
     @PostMapping("/familys")
-    public Family saveFamilyRecord(@RequestBody Family family){
+    public Family saveFamilyRecord(@Valid @RequestBody Family family){
         return familyService.saveFamilyRecord(family);
     }
 
@@ -38,5 +39,10 @@ public class FamilyController {
     public Family updateFamilyRecordById(@PathVariable ("id") Long familyId,
                                          @RequestBody Family family){
         return familyService.updateFamilyRecordById(familyId, family);
+    }
+
+    @GetMapping("/familys/name/{name}")
+    public Family getFamilyRecordByName(@PathVariable ("name") String familyName){
+        return familyService.getFamilyRecordByName(familyName);
     }
 }
