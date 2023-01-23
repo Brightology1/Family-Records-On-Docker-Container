@@ -11,4 +11,8 @@ public interface FamilyService {
   public List<Family> getFamilyMemberslist();
 
    public Family getFamilyById(Long familyId);
+
+   public void deleteFamilyRecordById(Long familyId);
+
+   public Family updateFamilyRecordById(Long familyId, Family family);
 }

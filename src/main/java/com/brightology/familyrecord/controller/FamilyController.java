@@ -27,4 +27,16 @@ public class FamilyController {
     public Family getFamilyById(@PathVariable ("id")Long familyId){
         return familyService.getFamilyById(familyId);
     }
+
+    @DeleteMapping("/familys/{id}")
+    public String deleteFamilyRecordById(@PathVariable ("id") Long familyId) {
+        familyService.deleteFamilyRecordById(familyId);
+        return "Family Record deleted successfully!";
+    }
+
+    @PutMapping("/familys/{id}")
+    public Family updateFamilyRecordById(@PathVariable ("id") Long familyId,
+                                         @RequestBody Family family){
+        return familyService.updateFamilyRecordById(familyId, family);
+    }
 }
